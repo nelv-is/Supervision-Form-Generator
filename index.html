@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supervision Report</title>
+
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+margin: 20px;
+}
+
+h2 {
+color: #333;
+text-align: center;
+}
+
+form {
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 600px;
+margin: 0 auto;
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+}
+
+input,
+select,
+textarea {
+width: 100%;
+padding: 8px;
+margin-bottom: 16px;
+box-sizing: border-box;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+select {
+width: calc(100% + 2px); 
+}
+
+h3 {
+color: #333;
+margin-top: 20px;
+text-align: center;
+}
+
+h4 {
+color: #333;
+text-align: center;
+}
+
+textarea {
+width: 100%;
+}
+
+button {
+background-color: #4caf50;
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+}
+
+button:hover {
+background-color: #45a049;
+}
+
+#reportOutput {
+margin-top: 20px;
+padding: 20px;
+background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#copyButton {
+background-color: #008CBA;
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+margin-top: 20px;
+}
+
+#copyButton:hover {
+background-color: #00688B;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Supervision Form Generator</h2>
+<h3>for SDI+ <i>by _nelv</i></h3>
+
+<form id="supervisionForm">
+<label for="supervisorUsername">Your Discord ID:</label>
+<input type="text" id="supervisorUsername" required>
+
+<label for="etsRank">Your Regimental Rank:</label>
+<select id="etsRank">
+<option value="SDI">SDI</option>
+<option value="CDI">CDI</option>
+
+</select>
+
+<label for="timeZone">Your Timezone:</label>
+<select id="timeZone">
+<option value="GMT">GMT</option>
+<option value="EST">EST</option>
+<option value="AEST">AEST</option>
+</select>
+
+<label for="supervisedUsername">Their Discord ID:</label>
+<input type="text" id="supervisedUsername" required>
+
+<label for="supervisedRank">Their Regimental Rank:</label>
+<select id="supervisedRank">
+<option value="JDI">JDI</option>
+<option value="DI">DI</option>
+
+</select>
+<label for="supervisedTimezone">Their Timezone:</label>
+<select id="supervisedTimezone">
+<option value="GMT">GMT</option>
+<option value="EST">EST</option>
+<option value="AEST">AEST</option>
+</select>
+
+<h3>What they did well/correctly:</h3>
+
+<label for="preparation">Preparation:</label>
+<select id="preparation">
+<option value="Terrible">Terrible</option>
+<option value="Poor">Poor</option>
+<option value="Ok">Ok</option>
+<option value="Good">Good</option>
+</select>
+
+<label for="introduction">Introduction:</label>
+<select id="introduction">
+<option value="Terrible">Terrible</option>
+<option value="Poor">Poor</option>
+<option value="Ok">Ok</option>
+<option value="Good">Good</option>
+</select>
+
+<label for="drills">Drills:</label>
+<select id="drills">
+<option value="Terrible">Terrible</option>
+<option value="Poor">Poor</option>
+<option value="Ok">Ok</option>
+<option value="Good">Good</option>
+</select>
+
+<label for="marching">Marching:</label>
+<select id="marching">
+<option value="Terrible">Terrible</option>
+<option value="Poor">Poor</option>
+<option value="Ok">Ok</option>
+<option value="Good">Good</option>
+</select>
+
+<label for="classroomRules">Classroom Rules:</label>
+<select id="classroomRules">
+<option value="Terrible">Terrible</option>
+<option value="Poor">Poor</option>
+<option value="Ok">Ok</option>
+<option value="Good">Good</option>
+</select>
+
+<label for="classroomSection">Classroom Section:</label>
+<select id="classroomSection">
+<option value="Terrible">Terrible</option>
+<option value="Poor">Poor</option>
+<option value="Ok">Ok</option>
+<option value="Good">Good</option>
+</select>
+
+<label for="obbyRules">Obby Rules:</label>
+<select id="obbyRules">
+<option value="Terrible">Terrible</option>
+<option value="Poor">Poor</option>
+<option value="Ok">Ok</option>
+<option value="Good">Good</option>
+</select>
+
+<label for="obby">Obby:</label>
+<select id="obby">
+<option value="Terrible">Terrible</option>
+<option value="Poor">Poor</option>
+<option value="Ok">Ok</option>
+<option value="Good">Good</option>
+</select>
+
+<label for="graduation">Graduation:</label>
+<select id="graduation">
+<option value="Terrible">Terrible</option>
+<option value="Poor">Poor</option>
+<option value="Ok">Ok</option>
+<option value="Good">Good</option>
+</select>
+
+<label for="grammar">Grammar:</label>
+<select id="grammar">
+<option value="Terrible">Terrible</option>
+<option value="Poor">Poor</option>
+<option value="Ok">Ok</option>
+<option value="Good">Good</option>
+</select>
+
+<h3>What went wrong?</h3>
+<label for="whatWentWrong">Details:</label>
+<textarea id="whatWentWrong" rows="4"></textarea>
+
+<h3>Overall Score:</h3>
+<label for="overallScore">Score:</label>
+<input type="number" id="overallScore" min="0" max="10" required>
+
+<h3>Do they deserve their next rank?</h3>
+<label for="next">Their Next Rank:</label>
+<select id="nextRank">
+<option value="DI">DI</option>
+<option value="SDI">SDI</option>
+</select>
+
+<label for="deserve">Details:</label>
+<input type="text" id="deserve" required>
+
+<button type="button" onclick="generateReport()">GENERATE</button>
+</form>
+
+<div id="reportOutput"></div>
+
+<script>
+function generateReport() {
+
+var supervisorUsername = document.getElementById("supervisorUsername").value;
+var etsRank = document.getElementById("etsRank").value;
+var timeZone = document.getElementById("timeZone").value;
+var supervisedUsername = document.getElementById("supervisedUsername").value;
+var supervisedRank = document.getElementById("supervisedRank").value;
+var supervisedTimezone = document.getElementById("supervisedTimezone").value;
+var nextRank = document.getElementById("nextRank").value;
+
+var preparation = document.getElementById("preparation").value;
+var introduction = document.getElementById("introduction").value;
+var drills = document.getElementById("drills").value;
+var marching = document.getElementById("marching").value;
+var classroomRules = document.getElementById("classroomRules").value;
+var classroomSection = document.getElementById("classroomSection").value;
+var obbyRules = document.getElementById("obbyRules").value;
+var obby = document.getElementById("obby").value;
+var graduation = document.getElementById("graduation").value;
+var grammar = document.getElementById("grammar").value;
+
+var whatWentWrong = document.getElementById("whatWentWrong").value;
+var overallScore = document.getElementById("overallScore").value;
+var deserve = document.getElementById("deserve").value;
+
+var reportText = `Username of Supervisor: <@${supervisorUsername}>\n`;
+reportText += `ETS Rank: ${etsRank}\n`;
+reportText += `Timezone: ${timeZone}\n\n`;
+
+reportText += `Username of the person supervised: <@${supervisedUsername}>\n`;
+reportText += `ETS Rank: ${supervisedRank}\n`;
+reportText += `Timezone: ${supervisedTimezone}\n\n`;
+
+reportText += `What they did well/correctly:\n`;
+reportText += `Preparation: ${preparation}\n`;
+reportText += `Introduction: ${introduction}\n`;
+reportText += `Drills: ${drills}\n`;
+reportText += `Marching: ${marching}\n`;
+reportText += `Classroom Rules: ${classroomRules}\n`;
+reportText += `Classroom Section: ${classroomSection}\n`;
+reportText += `Obby Rules: ${obbyRules}\n`;
+reportText += `Obby: ${obby}\n`;
+reportText += `Graduation: ${graduation}\n`;
+reportText += `Grammar: ${grammar}\n\n`;
+
+reportText += `What went wrong?\n${whatWentWrong}\n\n`;
+
+reportText += `Overall Score: ${overallScore}/10\n\n`;
+reportText += `Do they deserve ${nextRank}?\n${deserve}\n`;
+
+document.getElementById("reportOutput").innerText = reportText;
+createCopyButton();
+}
+</script>
+
+<script>
+function createCopyButton() {
+
+var copyButton = document.createElement("button");
+copyButton.id = "copyButton";
+copyButton.innerHTML = "COPY";
+copyButton.onclick = function () {
+copyToClipboard();
+};
+
+document.getElementById("reportOutput").appendChild(copyButton);
+}
+</script>
+
+<script>
+function copyToClipboard() {
+function copyToClipboard() {
+
+var reportText = document.getElementById("reportOutput").innerText;
+
+var reportWithoutCopyButton = reportText.replace("COPY", "");
+
+var tempTextArea = document.createElement("textarea");
+tempTextArea.value = reportWithoutCopyButton;
+
+document.body.appendChild(tempTextArea);
+
+tempTextArea.select();
+
+document.execCommand("copy");
+
+document.body.removeChild(tempTextArea);
+
+alert("Report text (excluding 'COPY') copied to clipboard!");
+}
+
+</script>
+
+</body>
+
+</html>
