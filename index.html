@@ -76,11 +76,12 @@ background-color: #45a049;
 }
 
 #reportOutput {
-margin-top: 20px;
+margin: 20px auto;
 padding: 20px;
 background-color: #fff;
 border-radius: 8px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 600px;
 }
 
 #copyButton {
@@ -234,6 +235,7 @@ background-color: #00688B;
 <select id="nextRank">
 <option value="DI">DI</option>
 <option value="SDI">SDI</option>
+
 </select>
 
 <label for="deserve">Details:</label>
@@ -315,7 +317,6 @@ document.getElementById("reportOutput").appendChild(copyButton);
 </script>
 
 <script>
-function copyToClipboard() {
 function copyToClipboard() {
 
 var reportText = document.getElementById("reportOutput").innerText;
