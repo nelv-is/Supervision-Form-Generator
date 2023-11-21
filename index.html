@@ -108,14 +108,6 @@ background-color: #00688B;
 
 <form id="supervisionForm">
 
-<label for="quota">Quota</label>
-<select id="quota">
-<option value="1">1st Quota</option>
-<option value="2">2nd Quota</option>
-<option value="3+">3rd+ Quota</option>
-</select>
-
-
 <label for="supervisorUsername">Your Discord ID:</label>
 <input type="text" id="supervisorUsername" required>
 
@@ -270,7 +262,6 @@ background-color: #00688B;
 
 <script>
 function generateReport() {
-var quota = document.getElementById("quota").value;
 var supervisorUsername = document.getElementById("supervisorUsername").value;
 var etsRank = document.getElementById("etsRank").value;
 var timeZone = document.getElementById("timeZone").value;
@@ -294,8 +285,7 @@ var rsm = document.getElementById("rsm").value;
 var whatWentWrong = document.getElementById("whatWentWrong").value;
 var overallScore = document.getElementById("overallScore").value;
 var deserve = document.getElementById("deserve").value;
-
-var reportText = "```Quota: " + quota + "/2```\n\n";
+  
 reportText += `Username of Supervisor: <@${supervisorUsername}>\n`;
 reportText += `ETS Rank: ${etsRank}\n`;
 reportText += `Timezone: ${timeZone}\n\n`;
